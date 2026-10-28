@@ -1,6 +1,6 @@
 import type { ZCodeAppLogoProps } from "@/components/mobile-ui/contract.js";
 import { cn } from "@/components/lib/utils.js";
-import appLogoUrl from "@/assets/provider-icons/logo-zai.svg";
+import appLogoUrl from "@/assets/xungu-app-logo.png";
 
 /**
  * 桌面端标题栏左上角同款应用 logo（圆角方块 + Z 字形，自带底色，深浅主题通用）。

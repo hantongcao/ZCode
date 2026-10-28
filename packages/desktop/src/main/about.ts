@@ -56,7 +56,7 @@ interface AboutSnapshotOptions {
   };
 }
 
-const ABOUT_APPLICATION_NAME = "ZCode Desktop App";
+const ABOUT_APPLICATION_NAME = "XunguAgent Desktop App";
 // 自定义 About 内容本体是 256x280；原生窗口如果同尺寸会让内容贴满透明窗口边界。
 // 这里给 BrowserWindow 额外留出背景呼吸空间，避免正式 About 看起来比 demo 更局促。
 const ABOUT_WINDOW_WIDTH = 256;
@@ -277,6 +277,9 @@ export async function showAboutDialog(
     `data:text/html;charset=utf-8,${encodeURIComponent(
       createCustomAboutDialogHtml({
         applicationName: ABOUT_APPLICATION_NAME,
+        appLogoDataUrl: existsSync(iconPath)
+          ? `data:image/png;base64,${readFileSync(iconPath).toString("base64")}`
+          : "",
         appVersion: snapshot.appVersion,
         copyright: formatAboutCopyright(undefined, locale),
         optimizationLine: formatAboutOptimizationLine(snapshot, locale),
